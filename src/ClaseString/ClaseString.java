@@ -41,6 +41,9 @@ public class ClaseString {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
+        String ca = "";
+        
+        
 //         for (int j = 0; j < 10; j++) {
 //            char[] letras = new char[50];
 //            for (int i = 0; i < letras.length; i++) {
