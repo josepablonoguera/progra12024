@@ -21,8 +21,8 @@ public class Main {
     static BufferedReader br = new BufferedReader(
             new InputStreamReader(System.in));
     static Person[] people = new Person[5];
-    
-    static int k =0;
+
+    static int k = 0;
 
     public static void main(String[] args) throws IOException {
         menu();
@@ -78,7 +78,7 @@ public class Main {
         switch (opc) {
             case 1:
                 people[k] = registrar();
-                k++; 
+                k++;
                 menuAdmin();
                 break;
             case 2:
@@ -96,49 +96,48 @@ public class Main {
 
     }
 
-    private static Person registrar()throws IOException {
+    private static Person registrar() throws IOException {
         System.out.println("1. Estudiante");
         System.out.println("2. Profesor");
         System.out.println("3. Regresar");
         int opc = 0;
         try {
             opc = Integer.parseInt(br.readLine());
-        } catch (IOException iOException) {         
-        } catch (NumberFormatException numberFormatException) {          
+        } catch (IOException iOException) {
+        } catch (NumberFormatException numberFormatException) {
         }
-        if (opc==1) {
+        if (opc == 1) {
             System.out.println("Rango de edad:");
             int rango = Integer.parseInt(br.readLine());
             System.out.println("");
-             System.out.println("Escolaridad:");
+            System.out.println("Escolaridad:");
             String escolaridad = br.readLine();
             System.out.println("");
-            return new Student(rango, escolaridad, "1", "Juanito Mora", 
+            return new Student(rango, escolaridad, "1", "Juanito Mora",
                     new Contact(null, null, "Golfito"));
         }
-          if (opc==2) {
+        if (opc == 2) {
             System.out.println("Especialidad:");
             String especialidad = br.readLine();
             System.out.println("");
-             System.out.println("Lenguaje:");
+            System.out.println("Lenguaje:");
             String lenguaje = br.readLine();
             System.out.println("");
-            return new Profesor(especialidad, lenguaje, 
+            return new Profesor(especialidad, lenguaje,
                     "PRF -1 ", "Pablo Noguera",
                     new Contact(null, null, "Ciudad Neily"));
         }
-     return null;
+        return null;
     }
 
     private static void mostrarPersonas() {
-        
+
         for (int i = 0; i < people.length; i++) {
-            if (people[i]!=null) {
-                 System.out.println("Persona: "+ people[i].toString());
+            if (people[i] != null) {
+                System.out.println("Persona: " + people[i].toString());
             }
-           
+
         }
     }
-     
 
 }
