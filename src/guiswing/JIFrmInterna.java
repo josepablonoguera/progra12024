@@ -22,24 +22,25 @@ public class JIFrmInterna extends javax.swing.JInternalFrame {
     /**
      * Creates new form JIFrmInterna
      */
-    Voter[] voters ;
-    
+    Voter[] voters;
+
     public JIFrmInterna() {
-        
+
         initComponents();
-          File file = new File("PUGOLFITO.txt");
+        File file = new File("PUGOLFITO.txt");
         if (file.exists()) {
             System.out.println("Si hay fichero");
             try {
-              voters  = readFile(file);
-              List<Voter> votantes = new ArrayList();
+                voters = readFile(file);
+                List<Voter> votantes = new ArrayList();
                 for (int i = 0; i < voters.length; i++) {
-                    votantes.add(voters[i]);                }
-              
-              VotanteTableModel tabla = new VotanteTableModel(votantes);
-               tblVotantes.setModel(tabla);
+                    votantes.add(voters[i]);
+                }
+
+                VotanteTableModel tabla = new VotanteTableModel(votantes);
+                tblVotantes.setModel(tabla);
             } catch (IOException ex) {
-                
+
             }
         }
     }
